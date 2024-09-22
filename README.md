@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<!-- <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
@@ -63,4 +63,104 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT). -->
+
+# API Endpoints untuk Data Daerah di Indonesia
+
+Aplikasi ini menyediakan API untuk mengambil data wilayah di Indonesia, mulai dari provinsi, kabupaten/kota, kecamatan, hingga desa/kelurahan.
+
+## 1. Province (Provinsi)
+
+-   **GET /province**  
+    Mengambil daftar semua provinsi di Indonesia.
+
+    -   **Response**: Daftar provinsi dengan `id`, `name`.
+
+-   **GET /province/{province_id}**  
+    Mengambil detail satu provinsi berdasarkan `province_id`.
+
+    -   **Parameter**:
+        -   `province_id` (integer): ID provinsi.
+    -   **Response**: Detail provinsi.
+
+-   **GET /province/{province_id}/regencies**  
+    Mengambil daftar kabupaten/kota berdasarkan provinsi.
+    -   **Parameter**:
+        -   `province_id` (integer): ID provinsi.
+    -   **Response**: Daftar kabupaten/kota di provinsi yang dipilih.
+
+## 2. Regency (Kabupaten/Kota)
+
+-   **GET /regency**  
+    Mengambil daftar semua kabupaten/kota di Indonesia.
+
+    -   **Response**: Daftar kabupaten/kota dengan `id`, `name`.
+
+-   **GET /regency/{regency_id}**  
+    Mengambil detail satu kabupaten/kota berdasarkan `regency_id`.
+
+    -   **Parameter**:
+        -   `regency_id` (integer): ID kabupaten/kota.
+    -   **Response**: Detail kabupaten/kota.
+
+-   **GET /regency/{regency_id}/districts**  
+    Mengambil daftar kecamatan berdasarkan kabupaten/kota.
+    -   **Parameter**:
+        -   `regency_id` (integer): ID kabupaten/kota.
+    -   **Response**: Daftar kecamatan di kabupaten/kota yang dipilih.
+
+## 3. District (Kecamatan)
+
+-   **GET /district**  
+    Mengambil daftar semua kecamatan di Indonesia.
+
+    -   **Response**: Daftar kecamatan dengan `id`, `name`.
+
+-   **GET /district/{district_id}**  
+    Mengambil detail satu kecamatan berdasarkan `district_id`.
+
+    -   **Parameter**:
+        -   `district_id` (integer): ID kecamatan.
+    -   **Response**: Detail kecamatan.
+
+-   **GET /district/{district_id}/villages**  
+    Mengambil daftar desa/kelurahan berdasarkan kecamatan.
+    -   **Parameter**:
+        -   `district_id` (integer): ID kecamatan.
+    -   **Response**: Daftar desa/kelurahan di kecamatan yang dipilih.
+
+## 4. Village (Desa/Kelurahan)
+
+-   **GET /village**  
+    Mengambil daftar semua desa/kelurahan di Indonesia.
+
+    -   **Response**: Daftar desa/kelurahan dengan `id`, `name`.
+
+-   **GET /village/{village_id}**  
+    Mengambil detail satu desa/kelurahan berdasarkan `village_id`.
+    -   **Parameter**:
+        -   `village_id` (integer): ID desa/kelurahan.
+    -   **Response**: Detail desa/kelurahan.
+
+## Contoh Request & Response
+
+### Contoh Request:
+
+```bash
+GET /province
+```
+
+### Contoh Response:
+
+```json
+[
+    {
+        "id": 11,
+        "name": "Aceh"
+    },
+    {
+        "id": 12,
+        "name": "Sumatera Utara"
+    }
+]
+```
