@@ -165,6 +165,7 @@ GET /province
             "id": 12,
             "name": "Sumatera Utara"
         }
+        ...
     ]
 ]
 ```
