@@ -154,13 +154,17 @@ GET /province
 
 ```json
 [
-    {
-        "id": 11,
-        "name": "Aceh"
-    },
-    {
-        "id": 12,
-        "name": "Sumatera Utara"
-    }
+    "code": 200,
+    "message": "success",
+    "data":[
+        {
+            "id": 11,
+            "name": "Aceh"
+        },
+        {
+            "id": 12,
+            "name": "Sumatera Utara"
+        }
+    ]
 ]
 ```
